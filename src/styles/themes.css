@@ -1,0 +1,94 @@
+/* Light Theme */
+.light-theme {
+  --bg-color: var(--gray-50);
+  --bg-content: white;
+  --text-color: var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --border-color: var(--gray-200);
+  --input-bg: white;
+  --input-border: var(--gray-300);
+  --placeholder-color: var(--gray-400);
+  --header-bg: white;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --bg-color: var(--gray-900);
+  --bg-content: var(--gray-800);
+  --text-color: var(--gray-100);
+  --text-secondary: var(--gray-300);
+  --border-color: var(--gray-700);
+  --input-bg: var(--gray-700);
+  --input-border: var(--gray-600);
+  --placeholder-color: var(--gray-500);
+  --header-bg: var(--gray-800);
+}
+
+.light-theme .theme-icon-dark {
+  display: none;
+}
+
+.dark-theme .theme-icon-light {
+  display: none;
+}
+
+/* Theme Transition */
+body, header, .form-section, .resume-preview, footer, input, textarea, 
+.experience-item, .education-item, .section-order-item {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Dark Theme Resume Preview Adaptations */
+.dark-theme .resume-preview {
+  background-color: white;
+  color: var(--gray-900);
+}
+
+.dark-theme .resume-preview h1,
+.dark-theme .resume-preview h2,
+.dark-theme .resume-preview h3,
+.dark-theme .resume-preview .resume-item-title,
+.dark-theme .resume-preview .resume-item-subtitle,
+.dark-theme .resume-preview .resume-item-content,
+.dark-theme .resume-preview .resume-item-date,
+.dark-theme .resume-preview .contact-info p {
+  color: inherit;
+}
+
+/* Print Styles - For PDF Export */
+@media print {
+  body {
+    background: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, footer, .form-section, button {
+    display: none !important;
+  }
+  
+  .main-container {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .preview-section {
+    position: static;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resume-preview {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    min-height: auto;
+  }
+}
